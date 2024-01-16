@@ -1,3 +1,5 @@
+import { Outlet } from "@tanstack/react-router";
+
 function App() {
   return (
     <>
@@ -30,6 +32,7 @@ function App() {
       muitão muitão muitão muitão muitão muitão muitão muitão muitão muitão
       muitão muitão muitão muitão muitão muitão muitão muitão muitão muitão
       muitão muitão muitão muitão muitão muitão muitão muitão muitão muitão
+      <Outlet />
     </>
   );
 }
