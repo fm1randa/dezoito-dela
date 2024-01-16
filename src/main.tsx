@@ -7,6 +7,7 @@ import {
   Router,
   RouterProvider,
 } from "@tanstack/react-router";
+import "./index.css";
 
 const rootRoute = new RootRoute({
   component: App,
@@ -16,11 +17,7 @@ const indexRoute = new Route({
   getParentRoute: () => rootRoute,
   path: "/",
   component: function Index() {
-    return (
-      <div>
-        <h3>mais do que ontem e menos que amanhã</h3>
-      </div>
-    );
+    return <div></div>;
   },
 });
 
