@@ -1,4 +1,4 @@
-import { Outlet } from "@tanstack/react-router";
+import { Link, Outlet } from "@tanstack/react-router";
 import oldGoogleLogo from "../assets/old-google-logo.png";
 import styled from "styled-components";
 
@@ -25,21 +25,17 @@ OldGoogleLogo.defaultProps = {
 const SearchBar = styled.input`
   width: 300px;
   height: 20px;
-
   pointer-events: none;
-`;
-
-const SubmitButton = styled.button`
-  width: 100px;
 `;
 
 function App() {
   return (
     <Container>
       <InvisibleTopBar />
-      <OldGoogleLogo />
-      <SearchBar value="O que é amor?" />
-      <SubmitButton>Pesquisar</SubmitButton>
+      <Link to={"/"}>
+        <OldGoogleLogo />
+      </Link>
+      <SearchBar value="O que é amor?" readOnly />
       <Outlet />
     </Container>
   );
