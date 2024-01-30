@@ -1,14 +1,6 @@
-import { Link, Outlet } from "@tanstack/react-router";
-import oldGoogleLogo from "../assets/old-google-logo.png";
 import styled from "styled-components";
-
-const Container = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  row-gap: 1em;
-`;
+import oldGoogleLogo from "../../assets/old-google-logo.png";
+import { Link, Outlet, createFileRoute } from "@tanstack/react-router";
 
 const InvisibleTopBar = styled.div`
   height: 100px;
@@ -28,17 +20,19 @@ const SearchBar = styled.input`
   pointer-events: none;
 `;
 
-function App() {
+function Layout() {
   return (
-    <Container>
+    <>
       <InvisibleTopBar />
       <Link to={"/"}>
         <OldGoogleLogo />
       </Link>
       <SearchBar value="O que é amor?" readOnly />
       <Outlet />
-    </Container>
+    </>
   );
 }
 
-export default App;
+export const Route = createFileRoute("/_search")({
+  component: Layout,
+});
